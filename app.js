@@ -94,15 +94,15 @@ const comments = [
 let veryOldInventors = [];
 
 veryOldInventors=inventors.filter((inventer)=>{
-    return inventer.year<1600
+    return (inventer.year<1600)&&(inventer.year>=1500)
 })
 
 // Check your work:
-/*console.log('Exercise 1 my result: ', veryOldInventors);
+console.log('Exercise 1 my result: ', veryOldInventors);
 console.log('Exercise 1 correct result: ', [
   { first: 'Galileo', last: 'Galilei', year: 1564, passed: 1642 },
   { first: 'Johannes', last: 'Kepler', year: 1571, passed: 1630 },
-]);*/
+]);
 ///////////////////////////////////////////////////////////////////////////
 /*
 Exercise 2: Array.prototype.map()
@@ -125,7 +125,7 @@ let inventorNames = [];
 inventorNames=inventors.map((inventor)=>{
     return {first:inventor.first , last:inventor.last}
 })
-/*console.log(inventorNames)
+
 
 // Check your work:
 console.log('Exercise 2 my result: ', inventorNames);
@@ -142,7 +142,7 @@ console.log('Exercise 2 correct result: ', [
   { first: 'Sarah E.', last: 'Goode' },
   { first: 'Lise', last: 'Meitner' },
   { first: 'Hanna', last: 'Hammarström' },
-]);/*
+]);
 ////////////////////////////////////////////////
 /*
 Exercise 3: Array.prototype.sort()
@@ -157,7 +157,7 @@ sortedByBirthYear=inventors.sort((a,b)=>a.year - b.year)
 // Complete the exercise in the space below:
 
 // Check your work:
-/*console.log('Exercise 3 my result: ', sortedByBirthYear);
+console.log('Exercise 3 my result: ', sortedByBirthYear);
 console.log('Exercise 3 correct result: ', [
   { first: 'Nicolaus', last: 'Copernicus', year: 1473, passed: 1543 },
   { first: 'Galileo', last: 'Galilei', year: 1564, passed: 1642 },
@@ -171,7 +171,7 @@ console.log('Exercise 3 correct result: ', [
   { first: 'Lise', last: 'Meitner', year: 1878, passed: 1968 },
   { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
   { first: 'Katherine', last: 'Blodgett', year: 1898, passed: 1979 },
-]);*/
+]);
 /////////////////////////////////////////////////////////////
 /* 
 Exercise 4: Array.prototype.find()
@@ -195,13 +195,13 @@ inventorNamedAda=inventors.find((inventor)=>{
 // Complete the exercise in the space below:
 
 // Check your work:
-/*console.log('Exercise 4 my result: ', inventorNamedAda);
+console.log('Exercise 4 my result: ', inventorNamedAda);
 console.log('Exercise 4 correct result: ', {
   first: 'Ada',
   last: 'Lovelace',
   year: 1815,
   passed: 1852,
-});*/
+});
 //////////////////////////////////////////////////
 /*
 Exercise 5: Array.prototype.map()
@@ -228,8 +228,8 @@ firstLast=people.map((name)=> {
 // Complete the exercise in the space below:
 
 // Check your work:
-//console.log('Exercise 5 my result: ', firstLast);
-/*console.log('Exercise 5 correct result: ', [
+console.log('Exercise 5 my result: ', firstLast);
+console.log('Exercise 5 correct result: ', [
   'Carl Becker',
   'Samuel Beckett',
   'Mick Beddoes',
@@ -270,7 +270,7 @@ firstLast=people.map((name)=> {
   'Robert Blair',
   'Tony Blair',
   'William Blake',
-]);*/
+]);
 //////////////////////////////////////////////////////
 /*
 Exercise 6: Array.prototype.some()
@@ -300,8 +300,8 @@ isAdultPresent=devs.some((devaloper)=>{
 // Complete the exercise in the space below:
 
 // Check your work:
-//console.log('Exercise 6 my result: ', isAdultPresent);
-//console.log('Exercise 6 correct result: ', true);
+console.log('Exercise 6 my result: ', isAdultPresent);
+console.log('Exercise 6 correct result: ', true);
 ////////////////////////////////////////////////////////////////////////////
 /*
 Exercise 7: Array.prototype.every()
@@ -318,15 +318,56 @@ Use Array.prototype.every() to determine if every person in the devs array is
 
 let isEveryone19OrOlder = null;
 isEveryone19OrOlder=devs.every((developer)=>{
-  console.log(developer.year)
+  
   return developer.year<=2007
 })
+
 
 // Complete the exercise in the space below:
 
 // Check your work:
 console.log('Exercise 7 my result: ', isEveryone19OrOlder);
 console.log('Exercise 7 correct result: ', false);
+
+//////////////////////////////////////////////////////////////
+/*
+Exercise 8: Array.prototype.find()
+
+Use Array.prototype.find() to identify and retrieve the comment object with 
+a specific ID 823423 from an array of comment objects.
+
+- Assign the found comment object to the variable 'commentById'.
+*/
+
+let commentById = {};
+commentById=comments.find((comment)=>{
+  return comment.id===823423
+})
+
+// Complete the exercise in the space below:
+
+// Check your work:
+console.log('Exercise 8 my result: ', commentById);
+console.log('Exercise 8 correct result: ', { text: 'Super good', id: 823423 });
+
+//////////////////////////////////////////////////////////////////////////
+/*
+Exercise 9: Array.prototype.findIndex()
+
+Determine the index of the comment that has a specific ID 123523 in an array 
+of comment objects.
+
+- Store the index in the variable 'idx'.
+*/
+
+let idx = null;
+idx=comments.findIndex((comment)=>{return comment.id===123523})
+
+// Complete the exercise in the space below:
+
+// Check your work:
+console.log('Exercise 9 my result: ', idx);
+console.log('Exercise 9 correct result: ', 3);
 
 
 
