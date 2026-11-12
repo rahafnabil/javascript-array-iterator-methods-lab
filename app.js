@@ -195,13 +195,140 @@ inventorNamedAda=inventors.find((inventor)=>{
 // Complete the exercise in the space below:
 
 // Check your work:
-console.log('Exercise 4 my result: ', inventorNamedAda);
+/*console.log('Exercise 4 my result: ', inventorNamedAda);
 console.log('Exercise 4 correct result: ', {
   first: 'Ada',
   last: 'Lovelace',
   year: 1815,
   passed: 1852,
-});
+});*/
+//////////////////////////////////////////////////
+/*
+Exercise 5: Array.prototype.map()
+
+Use the Array.prototype.map() method to reformat each name in the 'people' 
+array. The goal is to convert names from "Last, First" format to "First Last" 
+format.
+
+Hint: Use the String.prototype.split() method to separate the first and last 
+      names. You can split the string using ', ' as the separator.
+      After splitting the names, rearrange them to the "First Last" format.
+*/
+
+let firstLast = [];
+firstLast=people.map((name)=> {
+    let pname=name.split(', ')
+    return `${pname[1]} ${pname[0]}`
+    //could also do it with 
+    //return `${name.split(', ')[1]} ${name.split(', ')[0]}`
+    //but our current one look nicer to me personally
+})
+
+
+// Complete the exercise in the space below:
+
+// Check your work:
+//console.log('Exercise 5 my result: ', firstLast);
+/*console.log('Exercise 5 correct result: ', [
+  'Carl Becker',
+  'Samuel Beckett',
+  'Mick Beddoes',
+  'Henry Beecher',
+  'Ludwig Beethoven',
+  'Menachem Begin',
+  'Hilaire Belloc',
+  'Saul Bellow',
+  'Robert Benchley',
+  'Peter Benenson',
+  'David Ben-Gurion',
+  'Walter Benjamin',
+  'Tony Benn',
+  'Chester Bennington',
+  'Leana Benson',
+  'Silas Bent',
+  'Lloyd Bentsen',
+  'Ric Berger',
+  'Ingmar Bergman',
+  'Luciano Berio',
+  'Milton Berle',
+  'Irving Berlin',
+  'Eric Berne',
+  'Sandra Bernhard',
+  'Yogi Berra',
+  'Halle Berry',
+  'Wendell Berry',
+  'Erin Bethea',
+  'Aneurin Bevan',
+  'Ken Bevel',
+  'Joseph Biden',
+  'Ambrose Bierce',
+  'Steve Biko',
+  'Josh Billings',
+  'Frank Biondo',
+  'Augustine Birrell',
+  'Elk Black',
+  'Robert Blair',
+  'Tony Blair',
+  'William Blake',
+]);*/
+//////////////////////////////////////////////////////
+/*
+Exercise 6: Array.prototype.some()
+
+Determine if there is at least one person in the devs array who is 18 years 
+old or older.
+
+- You have an array of people with their respective ages.
+- Use the Array.prototype.some() method to check if any person in the array is 
+  18 years old or older.
+- Store the result (true or false) in the variable 'isAdultPresent'. 
+*/
+
+let isAdultPresent = null;
+isAdultPresent=devs.some((devaloper)=>{
+  //assuming this is 2026, will assuem that however is born 2008 and before is an adult 
+  return devaloper.year>=2008
+})
+//also here is the solve w/level up, here i learned some good stuff that i will use in my project😁
+//*also i love how easly we can make the code dynamic 
+/*let currentDate=new Date()
+let currentYear=currentDate.getFullYear()
+isAdultPresent=devs.some((devaloper)=>{
+  return devaloper.year>=(currentYear-18)
+  //console.log(devaloper.year<=(currentYear-18))
+})*/
+// Complete the exercise in the space below:
+
+// Check your work:
+//console.log('Exercise 6 my result: ', isAdultPresent);
+//console.log('Exercise 6 correct result: ', true);
+////////////////////////////////////////////////////////////////////////////
+/*
+Exercise 7: Array.prototype.every()
+
+Use Array.prototype.every() to determine if every person in the devs array is 
+19 years old or older.
+
+- You have an array of individuals, each with their year of birth represented
+  by the 'year' property.
+- Use the Array.prototype.every() method to verify if every individual in the
+  array is at least 19 years old.
+- Store the result (true or false) in the variable 'isEveryone19OrOlder'.
+*/
+
+let isEveryone19OrOlder = null;
+isEveryone19OrOlder=devs.every((developer)=>{
+  console.log(developer.year)
+  return developer.year<=2007
+})
+
+// Complete the exercise in the space below:
+
+// Check your work:
+console.log('Exercise 7 my result: ', isEveryone19OrOlder);
+console.log('Exercise 7 correct result: ', false);
+
+
 
 
 
